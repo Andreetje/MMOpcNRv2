@@ -2,13 +2,13 @@ FROM nodered/node-red-docker:slim
 Maintainer andre@jeanmaire.nl
 
 USER root
-RUN apk add --no-cache openssl python2 py-pip
+RUN apk add --no-cache openssl python2 py-pip nano
 
 RUN npm install -g --unsafe-perm node-red-dashboard
 RUN npm install -g --unsafe-perm node-red-contrib-opcua
 RUN npm install -g --unsafe-perm simpletime
 RUN npm install -g --unsafe-perm bcryptjs
-npm install -g node-red-admin
+RUN npm install -g node-red-admin
 
 RUN npm uninstall -g node-red-pi
 
