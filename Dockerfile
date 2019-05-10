@@ -3,9 +3,9 @@ Maintainer andre@jeanmaire.nl
 
 USER root
 
-RUN apk add --no-cache python3
-RUN pip3 install --upgrade pip
-RUN pip3 install pyro4
+RUN apk add --no-cache python2
+RUN pip install --upgrade pip
+RUN pip install pyro
 RUN mkdir opc
 
 COPY opc/* opc/
