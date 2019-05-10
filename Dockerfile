@@ -4,11 +4,11 @@ Maintainer andre@jeanmaire.nl
 USER root
 RUN apk add --no-cache openssl python2 py-pip nano
 
-RUN npm install -g --unsafe-perm node-red-dashboard
-RUN npm install -g --unsafe-perm node-red-contrib-opcua
-RUN npm install -g --unsafe-perm simpletime
-RUN npm install -g --unsafe-perm bcryptjs
-RUN npm install -g node-red-admin
+RUN npm install node-red-dashboard
+RUN npm install node-red-contrib-opcua
+RUN npm install simpletime
+RUN npm install bcryptjs
+RUN npm install node-red-admin
 
 RUN npm uninstall -g node-red-pi
 
