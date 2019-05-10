@@ -2,15 +2,18 @@ FROM nodered/node-red-docker:slim
 Maintainer andre@jeanmaire.nl
 
 USER root
+RUN apk add --no-cache openssl python2 py-pip
 
 RUN npm install -g --unsafe-perm node-red-dashboard
 RUN npm install -g --unsafe-perm node-red-contrib-opcua
 RUN npm install -g --unsafe-perm simpletime
+RUN npm install -g --unsafe-perm bcryptjs
+npm install -g node-red-admin
 
 RUN npm uninstall -g node-red-pi
-RUN apk add --no-cache openssl python2 py-pip
+
 RUN pip install --upgrade pip
 RUN pip install pyro
-RUN mkdir opc
+RUN mkdir /opc
 
-COPY opc/* opc/
+COPY opc/* /opc/
